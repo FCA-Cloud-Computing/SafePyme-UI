@@ -1,91 +1,151 @@
-# Free React / Next.js landing page template
+# SafePyme
 
-![Open React / Next.js template preview](https://github.com/user-attachments/assets/522a5e46-2a0e-48ca-80eb-87c7fa58f3ea)
+**SafePyme** is a cloud-based Security Operations Center (SOC) solution designed for small to medium-sized businesses. Built on open-source tools and AWS cloud infrastructure, SafePyme offers real-time threat monitoring, automated incident response, and customizable reporting to help protect businesses from cyber threats in an affordable and scalable way.
 
-**Open** is a **free React / Next.js landing page template built with Tailwind CSS** for developers/makers who want to create a quick and professional landing page for their open source projects, SaaS products, online services, and more.
+## Table of Contents
 
-Use it for whatever you want, and be sure to reach us out on [Twitter](https://twitter.com/Cruip_com) if you build anything cool/useful with it.
+-   [Project Overview](#project-overview)
+-   [Features](#features)
+-   [Project Structure](#project-structure)
+-   [Requirements](#requirements)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Configuration](#configuration)
+-   [Contributing](#contributing)
+-   [License](#license)
+-   [Credits](#credits)
 
-Created and maintained with ❤️ by [Cruip.com](https://cruip.com).
+----------
 
-_Version 1.0.0 built with the Cruip CSS is available [here](https://github.com/cruip/open-react-template/releases/tag/1.0.0)._
-_Version 2.0.3 built with Tailwind CSS and React + Vite is available [here](https://github.com/cruip/open-react-template/releases/tag/2.0.3)._
-_Version 3.3.0 (before redesign) built with Tailwind CSS and Next.js is available [here](https://github.com/cruip/open-react-template/releases/tag/3.3.0)._
+## Project Overview
 
-## Live demo
+SafePyme enables small businesses to deploy an end-to-end SOC solution, providing:
 
-Check the live demo here 👉️ [https://open.cruip.com/](https://open.cruip.com/)
+1.  Real-time threat monitoring and detection.
+2.  Automated incident response workflows.
+3.  Interactive data visualization for security events.
+4.  Scalable and cost-effective security infrastructure hosted on AWS.
 
-## Open PRO
+### Technology Stack
 
-[![Open Pro](https://github.com/user-attachments/assets/2062c728-95f1-4d59-aa2d-d63556f625d5)](https://cruip.com/)
+-   **Frontend**: Netx.js
+-   **Backend**: Spring Boot
+-   **Cloud Provider**: AWS (EC2, VPC, S3, Lambda, CloudTrail, CloudWatch)
+-   **Security Tools**: Wazuh (SIEM), Suricata (IDS/IPS), TheHive (Incident Response)
+-   **Data Visualization**: Elasticsearch, Kibana
+-   **Infrastructure as Code (IaC)**: Terraform or AWS CloudFormation
+-   **Scripting & Automation**: Python, Bash
 
-## Design files
+----------
 
-If you need the design files, you can download them from Figma's Community 👉 https://bit.ly/401KSUS
+## Features
+
+-   **Real-Time Threat Detection**: Wazuh and Suricata monitor security events, detect potential threats, and log all activities in real-time.
+-   **Automated Incident Response**: TheHive provides a comprehensive incident response framework with workflow automation.
+-   **Customizable Data Visualization**: Elasticsearch and Kibana enable interactive dashboards and security insights.
+-   **Scalable Cloud Environment**: Built on AWS, allowing for flexible scaling based on business needs.
+-   **Secure Setup with IaC**: Configure infrastructure through code, enabling security best practices from the start.
+-   **Cost-Effective Solution**: Ideal for small and medium businesses with budget-friendly open-source tools and AWS's pay-as-you-go model.
+
+----------
+
+## Project Structure
+
+SafePyme/
+│
+├── frontend/                  # Next.js frontend
+│   └── src/assets/img/        # Images (e.g., header-bg.jpg)
+│
+├── backend/                   # Spring Boot backend
+│
+├── infrastructure/            # Infrastructure setup files
+│   ├── terraform/             # Terraform IaC scripts
+│   └── cloudformation/        # AWS CloudFormation templates
+│
+├── scripts/                   # Python and Bash automation scripts
+│
+└── README.md                  # Project README file
+
+
+----------
+
+## Requirements
+
+-   **AWS Account** with required permissions (EC2, VPC, S3, Lambda, CloudTrail, CloudWatch)
+-   **Terraform** or **AWS CloudFormation**
+-   **Next.js CLI** for frontend
+-   **Spring Boot** and **Java** for backend
+-   **Python 3** and **Bash** for scripting
+
+----------
+
+## Installation
+
+### Step 1: Clone the Repository
+
+bash
+
+Copiar código
+
+`git clone https://github.com/yourusername/SafePyme.git
+cd SafePyme` 
+
+### Step 2: Set Up Infrastructure
+
+1.  Choose either **Terraform** or **AWS CloudFormation** in the `infrastructure` directory.
+2.  Follow the instructions in the respective subfolder to deploy the required AWS resources.
+
+### Step 3: Configure Backend and Frontend
+
+-   **Backend**: Follow the instructions in `backend/README.md` to set up the Spring Boot server.
+-   **Frontend**: Follow the instructions in `frontend/README.md` to set up and run the Next.js app.
+
+### Step 4: Run the Scripts
+
+Execute any setup or automation scripts located in `scripts/` to initialize Wazuh, Suricata, and other security tools.
+
+----------
 
 ## Usage
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+1.  **Access the frontend** at `http://<your_domain_or_ip>:3000`.
+2.  **Login** to view the dashboard.
+3.  **Monitor Alerts and Logs**: Real-time alerts and logs are displayed, updated by Wazuh and Suricata.
+4.  **Incident Management**: Use TheHive to manage incidents, create response workflows, and assign tasks.
 
-### Getting Started
+----------
 
-First, run the development server:
+## Configuration
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+-   **Backend Configuration**: Modify backend environment variables in `backend/src/main/resources/application.properties`.
+-   **Frontend Configuration**: Update frontend settings in `frontend/src/environments/environment.ts`.
+-   **AWS Configuration**: Set AWS credentials and permissions as needed in your chosen IaC solution (Terraform or CloudFormation).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+----------
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+We welcome contributions! If you’d like to help with this project, please fork the repository, make your changes, and submit a pull request. Make sure to follow our [contribution guidelines](CONTRIBUTING.md).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+----------
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## License
 
-### Learn More
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-### Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-### Support notes
-
-This template has been developed with the App Router (`app`) and React Server Components. If you’re unfamiliar with these beta features, you can find more information about them on the Next.js beta documentation page. So, please note that any request dealing with React (e.g. extra features, customisations, et cetera) is to be considered out of the support scope.
-
-For more information about what support covers, please see our (FAQs)[https://cruip.com/faq/].
+----------
 
 ## Credits
 
-- [Nucleo](https://nucleoapp.com/)
+SafePyme is built on various open-source projects. Thanks to:
 
-## Terms and License
+-   **Wazuh** for SIEM functionality.
+-   **Suricata** for IDS/IPS.
+-   **TheHive** for incident response workflows.
+-   **Elasticsearch & Kibana** for data storage and visualization.
 
-- Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
-- Copyright 2024 [Cruip](https://cruip.com/).
-- Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
-- Attribution is not required, although it is really appreciated.
+Special thanks to all contributors and the open-source community for making this project possible.
 
-## About Us
+----------
 
-We're an Italian developer/designer duo creating high-quality design/code resources for developers, makers, and startups.
-
-## Stay in the loop
-
-If you would like to know when we release new resources, you can follow [@pacovitiello](https://x.com/pacovitiello) and [@DavidePacilio](https://x.com/DavidePacilio) on X, or you can subscribe to our [newsletter](https://cruip.com/newsletter/).
+This README should give users a comprehensive introduction to SafePyme, covering setup, usage, and contribution guidelines effectively. Let me know if you’d like to add or adjust anything further!
