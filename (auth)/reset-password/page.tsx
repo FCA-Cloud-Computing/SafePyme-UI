@@ -23,7 +23,7 @@ export default function ResetPassword() {
                 className="mb-1 block text-sm font-medium text-indigo-200/65"
                 htmlFor="email"
               >
-                Email
+                Email Address
               </label>
               <input
                 id="email"
