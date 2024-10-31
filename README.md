@@ -28,7 +28,7 @@ SafePyme enables small businesses to deploy an end-to-end SOC solution, providin
 
 ### Technology Stack
 
--   **Frontend**: Angular
+-   **Frontend**: Netx.js
 -   **Backend**: Spring Boot
 -   **Cloud Provider**: AWS (EC2, VPC, S3, Lambda, CloudTrail, CloudWatch)
 -   **Security Tools**: Wazuh (SIEM), Suricata (IDS/IPS), TheHive (Incident Response)
